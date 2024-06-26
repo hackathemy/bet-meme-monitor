@@ -22,7 +22,7 @@ async function bootstrap() {
 
   setInterval(async () => {
     await appService.monitorGames();
-  }, 3000); // 1분마다 실행
+  }, 10000); // 10초 마다 실행
 
   await app.listen(3000);
 }
