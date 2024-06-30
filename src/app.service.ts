@@ -38,7 +38,7 @@ export class AppService {
 
         if (!game.isEnded && game.startTime + game.duration <= currentTime) {
           this.logger.log('tx start');
-          await this.endGame(game.gameId, 1000000000000000000); // lastPrice를 적절히 설정해야 합니다
+          await this.endGame(game.gameId);
         }
       }
     } catch (error) {
