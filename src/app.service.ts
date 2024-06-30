@@ -46,14 +46,14 @@ export class AppService {
     }
   }
 
-  async endGame(gameId: number, lastPrice: number) {
+  async endGame(gameId: number) {
     const gasPrice = await this.web3.eth.getGasPrice();
     const tx = {
       from: this.account,
       to: this.contractAddress,
       gas: 2000000,
       gasPrice: gasPrice,
-      data: this.contract.methods.endGame(gameId, lastPrice).encodeABI(),
+      data: this.contract.methods.endGame(gameId).encodeABI(),
     };
 
     try {
